@@ -4,9 +4,12 @@
  * @author Mr. Jaffe
  * @version 2021-06-22 Version 1.0.0
  */
+import java.util.Scanner;
+import java.util.InputMismatchException;
 public class PDA
 {
-
+    int age = 0;
+    Scanner scanner = new Scanner(System.in);
     /**
      * Constructor for objects of class PDA
      */
@@ -15,12 +18,22 @@ public class PDA
         // We don't need to do anything in the constructor for
         // our program.
     }
-    
+
     /**
      * This is the main event loop for our PDA program
      */
     public void runEventLoop() {
-        System.out.println("PDA!");        
+        while(true) {
+            System.out.println("How old are you?");
+            try {
+                age = scanner.nextInt();
+                System.out.println(age);
+            } catch (InputMismatchException error) {
+                System.out.println("Please enter an integer");
+            }
+            scanner.next();
+            System.out.println("How old are you?");
+        } 
     }
 
     /**
