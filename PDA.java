@@ -8,8 +8,6 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 public class PDA
 {
-    int age = 0;
-    Scanner scanner = new Scanner(System.in);
     /**
      * Constructor for objects of class PDA
      */
@@ -18,27 +16,35 @@ public class PDA
         // We don't need to do anything in the constructor for
         // our program.
     }
-
+    Scanner scanner = new Scanner(System.in);
     /**
      * This is the main event loop for our PDA program
      */
     public void runEventLoop() {
-        while(true) {
+        boolean ShouldContinue = true;
+        while(ShouldContinue == true) {
+            int age = -1;
+            int LOWER_BOUND = 0;
+            int UPPER_BOUND = 0;
+            LOWER_BOUND = age/2 + 7;
+            UPPER_BOUND = age*2 + 7;
             System.out.println("How old are you?");
-            int LOWER_BOUND = 13;
+            System.out.println("Enter 0 to quit");
             try {
                 age = scanner.nextInt();
-                System.out.println(age);
-                if (age < LOWER_BOUND) {
+                if (age == 0) {
+                    ShouldContinue = false;
+                } else if (age < LOWER_BOUND) {
                     System.out.println(age + " is too young!!");
                 } else {
-                    System.out.println("Computations go here");
+                    LOWER_BOUND = age/2 + 7;
+                    UPPER_BOUND = (age - 7)*2;
+                    System.out.println("You can date between " + LOWER_BOUND + " and " + UPPER_BOUND);
                 }
             } catch (InputMismatchException error) {
                 System.out.println("Please enter an integer");
+                scanner.next();
             }
-            scanner.next();
-            System.out.println("How old are you?");
         } 
     }
 
