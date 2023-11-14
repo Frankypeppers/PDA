@@ -42,8 +42,6 @@ public class PDA
                     } else if (age > UPPER_BOUND) {
                         System.out.println(age + " is too young!!");
                     } else {
-                        LOWER_BOUND = age/2 + 7;
-                        UPPER_BOUND = (age - 7)*2;
                         System.out.println("You can date between " + LOWER_BOUND + " and " + UPPER_BOUND);
                     }
                 }
