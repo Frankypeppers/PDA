@@ -5,6 +5,7 @@
  * @version 2021-06-22 Version 1.0.0
  */
 import java.util.Scanner;
+import java.lang.Math;
 import java.util.InputMismatchException;
 public class PDA
 {
@@ -23,18 +24,18 @@ public class PDA
     public void runEventLoop() {
         boolean ShouldContinue = true;
         while(ShouldContinue == true) {
-            int age = -1;
+            double age = -1;
             System.out.println("How old are you?");
             System.out.println("Enter 0 to quit");
             try {
-                age = scanner.nextInt();
+                age = scanner.nextDouble();
                 if (age == 0) {
                     ShouldContinue = false;
                 } else if(age == -1) {
                     System.out.println("");
                 } else {
-                    int LOWER_BOUND = 0;
-                    int UPPER_BOUND = 0;
+                    double LOWER_BOUND = 0;
+                    double UPPER_BOUND = 0;
                     LOWER_BOUND = (age/2) + 7;
                     UPPER_BOUND = (age - 7) * 2;
                     if (age < LOWER_BOUND) {
