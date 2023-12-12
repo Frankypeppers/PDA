@@ -34,10 +34,8 @@ public class PDA
                 } else if(age == -1) {
                     System.out.println("");
                 } else {
-                    double LOWER_BOUND = 0;
-                    double UPPER_BOUND = 0;
-                    LOWER_BOUND = (age/2) + 7;
-                    UPPER_BOUND = (age - 7) * 2;
+                    int LOWER_BOUND = (int) Math.ceil((age/2) +7);
+                    int UPPER_BOUND = (int) Math.floor((age-7) *2);
                     if (age < LOWER_BOUND) {
                         System.out.println(age + " is too young!!");
                     } else if (age > UPPER_BOUND) {
